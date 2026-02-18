@@ -8,43 +8,70 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1e293b; }
+        
+        html { font-size: 14px; } 
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth; 
+            color: #1e293b; 
+            line-height: 1.5;
+        }
+
         .hero-section {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
+
         .stat-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(8px);
+            padding: 1rem;
         }
+
         .project-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
+
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.05);
             border-color: #3b82f6;
         }
+
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 4px;
+            width: 40px;
+            height: 3px;
             background: #2563eb;
-            margin-top: 10px;
+            margin-top: 8px;
             border-radius: 2px;
         }
+
         .btn-cv {
             background: white;
             color: #0f172a;
             transition: all 0.3s ease;
         }
+
         .btn-cv:hover {
             background: #f8fafc;
-            transform: scale(1.05);
+            transform: scale(1.03);
+        }
+
+        .badge-dispo {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
@@ -52,82 +79,87 @@
 
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <span class="font-extrabold text-2xl tracking-tighter text-slate-900 underline decoration-blue-600">GF.</span>
+                <span class="font-extrabold text-xl tracking-tighter text-slate-900 underline decoration-blue-600">GF.</span>
                 <div class="hidden sm:block border-l pl-4 border-slate-200">
-                    <p class="text-xs font-bold uppercase text-slate-500 tracking-tighter">Lyon, France</p>
-                    <p class="text-[10px] text-blue-600 font-medium italic">+33 7 49 69 01 89</p>
+                    <p class="text-[10px] font-bold uppercase text-slate-500 tracking-tighter">Lyon, France</p>
+                    <p class="text-[9px] text-blue-600 font-medium italic">+33 7 49 69 01 89</p>
                 </div>
             </div>
-            <div class="flex gap-6 items-center text-sm font-semibold">
+            <div class="flex gap-6 items-center text-[0.9rem] font-semibold">
                 <a href="#projets" class="hover:text-blue-600 transition">Réalisations</a>
                 <a href="#expertises" class="hover:text-blue-600 transition">Expertises</a>
-                <a href="#cv" class="hover:text-blue-600 transition italic text-blue-600 font-bold">Mon CV</a>
-                <a href="mailto:gedeonfopa6@gmail.com" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-blue-600 transition">Contact</a>
+                <a href="#cv" class="hover:text-blue-600 transition italic text-blue-600 font-bold underline decoration-2">Mon CV</a>
+                <a href="mailto:gedeonfopa6@gmail.com" class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-600 transition">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO HEADER -->
-    <header class="hero-section text-white pt-40 pb-32 px-6">
+    <header class="hero-section text-white pt-32 pb-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-8 space-y-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-8 space-y-6">
                     <div>
-                        <span class="text-blue-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Expertise & Performance Financière</span>
-                        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
+                        <span class="text-blue-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-3 block">Expertise & Performance Financière</span>
+                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-3">
                             Auditeur & <br><span class="text-blue-500">Analyste Financier</span>
                         </h1>
                     </div>
 
-                    <div class="bg-white/5 border-l-2 border-blue-500 p-6 max-w-3xl rounded-r-xl shadow-inner">
-                        <p class="text-slate-300 text-base leading-relaxed font-medium italic">
-                            "Étudiant à l'ESDES Business School, et déjà diplômé d'un premier master en comptabilité finance, je nourris une forte ambition de carrière dans les métiers de l'audit, de la finance et de la comptabilité. Mon double parcours académique constitue un réel atout et renforce ma double compétence. Autonome, rigoureux et déterminé, je sais travailler sous pression et apporter une valeur ajoutée immédiate."
+                    <div class="bg-white/5 border-l-2 border-blue-500 p-5 max-w-3xl rounded-r-xl">
+                        <p class="text-slate-300 text-sm leading-relaxed font-medium italic">
+                            "Étudiant à l'ESDES Business School, diplômé d'un master en comptabilité finance, je nourris une forte ambition dans l'audit et la finance. Mon double parcours est un atout stratégique pour apporter une valeur ajoutée immédiate et rigoureuse."
                         </p>
                     </div>
 
-                    <div class="flex flex-wrap gap-6 pt-4 items-center">
-                        <a href="mailto:gedeonfopa6@gmail.com" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
+                    <div class="flex flex-wrap gap-4 pt-2 items-center">
+                        <a href="mailto:gedeonfopa6@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
                             Me contacter
                         </a>
-                        <a href="https://drive.google.com/file/d/1ghKS_9bpU0uMEWzPBHMFjSaBrMVLEyNl/view?usp=sharing" target="_blank" class="btn-cv px-8 py-4 rounded-xl font-bold flex items-center gap-2 shadow-lg">
+                        <a href="https://drive.google.com/file/d/1ghKS_9bpU0uMEWzPBHMFjSaBrMVLEyNl/view?usp=sharing" target="_blank" class="btn-cv px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 shadow-lg">
                             <i class="fas fa-file-download"></i> Télécharger CV
                         </a>
                     </div>
 
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <div class="flex flex-col gap-1 pr-6 border-r border-white/10">
-                            <span class="text-[10px] uppercase text-slate-500 font-bold">Localisation</span>
-                            <span class="text-sm font-semibold">Lyon, France</span>
+                    <div class="flex flex-wrap gap-6 pt-4">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-[9px] uppercase text-slate-500 font-bold tracking-widest">Localisation</span>
+                            <span class="text-xs font-semibold">Lyon, France</span>
                         </div>
                         <div class="flex flex-col gap-1 pr-6 border-r border-white/10">
-                            <span class="text-[10px] uppercase text-slate-500 font-bold">Contact Direct</span>
-                            <span class="text-sm font-semibold">+33 7 49 69 01 89</span>
+                            <span class="text-[9px] uppercase text-slate-500 font-bold tracking-widest">Contact Direct</span>
+                            <span class="text-xs font-semibold">+33 7 49 69 01 89</span>
                         </div>
                         <div class="flex items-center gap-4 pl-2">
-                            <a href="mailto:gedeonfopa6@gmail.com" title="Envoyer un email" class="text-blue-400 hover:text-white transition"><i class="fas fa-envelope text-xl"></i></a>
-                            <a href="https://www.linkedin.com/in/gédéon-" target="_blank" title="Profil LinkedIn" class="text-blue-400 hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="mailto:gedeonfopa6@gmail.com" title="Envoyer un email" class="text-blue-400 hover:text-white transition"><i class="fas fa-envelope text-lg"></i></a>
+                            <a href="https://www.linkedin.com/in/gédéon-fopa-ab8682218" target="_blank" title="Profil LinkedIn" class="text-blue-400 hover:text-white transition"><i class="fab fa-linkedin text-lg"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- KPI SIDEBAR -->
-                <div class="lg:col-span-4 grid grid-cols-1 gap-4">
-                    <div class="stat-card p-6 rounded-2xl">
-                        <span class="text-[10px] font-black text-blue-400 uppercase tracking-widest">Optimisation</span>
-                        <div class="text-4xl font-extrabold mt-1">-12%</div>
-                        <p class="text-slate-400 text-xs mt-1">Réduction des charges bancaires (ECTA-BTP)</p>
+                <div class="lg:col-span-4 grid grid-cols-1 gap-3">
+                    <div class="stat-card rounded-xl text-center md:text-left">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-widest">Restructuration</span>
+                        <div class="text-2xl font-extrabold mt-1">Audit Flux</div>
+                        <p class="text-slate-400 text-[10px] mt-1 italic">Régularisation des flux comptables.</p>
                     </div>
-                    <div class="stat-card p-6 rounded-2xl">
-                        <span class="text-[10px] font-black text-green-400 uppercase tracking-widest">Trésorerie</span>
-                        <div class="text-4xl font-extrabold mt-1">125k €</div>
-                        <p class="text-slate-400 text-xs mt-1">Encours moyen sous gestion</p>
+                    <div class="stat-card rounded-xl text-center md:text-left">
+                        <span class="text-[9px] font-black text-green-400 uppercase tracking-widest">Optimisation</span>
+                        <div class="text-2xl font-extrabold mt-1">-12%</div>
+                        <p class="text-slate-400 text-[10px] mt-1 italic">Charges bancaires (ECTA-BTP).</p>
                     </div>
-                    <div class="stat-card p-6 rounded-2xl">
-                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Audit & Contrôle</span>
-                        <div class="text-4xl font-extrabold mt-1">+1 500</div>
-                        <p class="text-slate-400 text-xs mt-1">Écritures comptables auditées (Insight)</p>
+                    <div class="stat-card rounded-xl text-center md:text-left">
+                        <span class="text-[9px] font-black text-purple-400 uppercase tracking-widest">Contrôle</span>
+                        <div class="text-2xl font-extrabold mt-1">+1 500</div>
+                        <p class="text-slate-400 text-[10px] mt-1 italic">Écritures auditées (Insight).</p>
+                    </div>
+                    <div class="stat-card rounded-xl border-blue-500/30 bg-blue-500/5 text-center md:text-left">
+                        <span class="text-[9px] font-black text-amber-400 uppercase tracking-widest">Trésorerie</span>
+                        <div class="text-2xl font-extrabold mt-1 text-white">125k €</div>
+                        <p class="text-slate-400 text-[10px] mt-1 italic">Encours moyen sous gestion.</p>
                     </div>
                 </div>
             </div>
@@ -135,68 +167,84 @@
     </header>
 
     <!-- PROJETS ANALYTIQUES -->
-    <main id="projets" class="max-w-7xl mx-auto px-6 py-24">
-        <div class="mb-16">
-            <h2 class="text-3xl font-extrabold section-title italic">Cas Pratiques & Analyses de Travail</h2>
-            <p class="text-slate-500 mt-4">Sélection de dossiers techniques illustrant ma méthodologie d'analyse et d'audit.</p>
+    <main id="projets" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="mb-12 text-center lg:text-left">
+            <h2 class="text-2xl font-extrabold section-title italic">Réalisations & Cas Techniques</h2>
+            <p class="text-slate-500 mt-2 text-sm">Sélection de dossiers illustrant mon expertise opérationnelle et stratégique.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
             
-            <!-- PROJET 1 : EXCEL ZIKO -->
-            <article class="project-card bg-white rounded-3xl overflow-hidden shadow-sm">
-                <div class="h-40 bg-green-50 flex items-center justify-center border-b border-slate-100 relative group">
-                    <i class="fas fa-chart-pie text-5xl text-green-200 group-hover:text-green-500 transition-colors"></i>
-                    <span class="absolute top-4 right-4 bg-green-600 text-white text-[9px] px-2 py-1 rounded font-bold uppercase tracking-tighter">Reporting Excel</span>
+            <!-- PROJET 1 -->
+            <article class="project-card bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div class="h-32 bg-green-50 flex items-center justify-center border-b border-slate-100">
+                    <i class="fas fa-chart-line text-4xl text-green-200"></i>
                 </div>
-                <div class="p-8 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold mb-3 italic tracking-tight">Dashboard Ziko SA</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6">
-                        Conception d'un tableau de bord de pilotage (entreprise fictive). Modélisation des ventes, calcul de la marge brute et analyse des écarts budgétaires via TCD et Power Query.
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2 italic tracking-tight text-slate-900">Dashboard Ziko SA</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                        Modélisation de pilotage financier : analyse dynamique des marges et écarts budgétaires via TCD Excel.
                     </p>
-                    <div class="mt-auto pt-6 border-t border-slate-50">
-                        <a href="https://docs.google.com/spreadsheets/d/1xCC3iqXbhOnZ3iWs7OCPDVrkW1BBeXcb/edit?usp=sharing&ouid=104663664351029682293&rtpof=true&sd=true" target="_blank" class="flex items-center justify-between text-sm font-bold text-green-700 hover:text-green-800 transition">
-                            <span>Consulter le Dashboard</span>
+                    <div class="mt-auto pt-4 border-t border-slate-50">
+                        <a href="https://docs.google.com/spreadsheets/d/1xCC3iqXbhOnZ3iWs7OCPDVrkW1BBeXcb/edit?usp=sharing" target="_blank" class="flex items-center justify-between text-xs font-bold text-green-700 hover:text-green-800 transition">
+                            <span>Consulter Dashboard</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </article>
 
-            <!-- PROJET 2 : ILLIAD -->
-            <article class="project-card bg-white rounded-3xl overflow-hidden shadow-sm">
-                <div class="h-40 bg-blue-50 flex items-center justify-center border-b border-slate-100 relative group">
-                    <i class="fas fa-university text-5xl text-blue-200 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="absolute top-4 right-4 bg-blue-600 text-white text-[9px] px-2 py-1 rounded font-bold uppercase tracking-tighter">Analyse Financière</span>
+            <!-- PROJET 2 -->
+            <article class="project-card bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div class="h-32 bg-blue-50 flex items-center justify-center border-b border-slate-100">
+                    <i class="fas fa-file-invoice text-4xl text-blue-200"></i>
                 </div>
-                <div class="p-8 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold mb-3 italic tracking-tight">Analyse Iliad (Pré-OPRA)</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6">
-                        Analyse financière stratégique du groupe Iliad avant le retrait de la cote. Étude de la valorisation, des cash-flows et du montage financier de Xavier Niel (OPRA).
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2 italic tracking-tight text-slate-900">Analyse Iliad</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                        Évaluation financière pré-retrait de cote. Étude des flux de trésorerie disponibles et du levier de valorisation.
                     </p>
-                    <div class="mt-auto pt-6 border-t border-slate-50">
-                        <a href="https://docs.google.com/spreadsheets/d/194PGfZA5z9VS8C5wWqpsXUYUb3gHNqoe/edit?usp=sharing&ouid=104663664351029682293&rtpof=true&sd=true" target="_blank" class="flex items-center justify-between text-sm font-bold text-blue-700 hover:text-blue-800 transition">
-                            <span>Lire l'analyse financière</span>
+                    <div class="mt-auto pt-4 border-t border-slate-50">
+                        <a href="https://docs.google.com/spreadsheets/d/194PGfZA5z9VS8C5wWqpsXUYUb3gHNqoe/edit?usp=sharing" target="_blank" class="flex items-center justify-between text-xs font-bold text-blue-700 hover:text-blue-800 transition">
+                            <span>Lire l'analyse</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </article>
 
-            <!-- PROJET 3 : SAGE 100 BIJOU SA -->
-            <article class="project-card bg-white rounded-3xl overflow-hidden shadow-sm">
-                <div class="h-40 bg-slate-100 flex items-center justify-center border-b border-slate-100 relative group">
-                    <i class="fas fa-file-invoice-dollar text-5xl text-slate-300 group-hover:text-slate-600 transition-colors"></i>
-                    <span class="absolute top-4 right-4 bg-slate-800 text-white text-[9px] px-2 py-1 rounded font-bold uppercase tracking-tighter">Audit Sage 100</span>
+            <!-- PROJET 3 -->
+            <article class="project-card bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div class="h-32 bg-slate-100 flex items-center justify-center border-b border-slate-100">
+                    <i class="fas fa-shield-halved text-4xl text-slate-300"></i>
                 </div>
-                <div class="p-8 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold mb-3 italic tracking-tight">Comptabilité Bijou SA</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6">
-                        Dossier complet de comptabilité sur Sage 100 (Bijou SA). Travaux de lettrage, états de rapprochement bancaire et préparation des documents de synthèse annuels.
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2 italic tracking-tight text-slate-900">Comptabilité Bijou SA</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                        Cas pratique complet sur Sage 100 : lettrage des tiers, gestion des OD et clôture périodique.
                     </p>
-                    <div class="mt-auto pt-6 border-t border-slate-50">
-                        <a href="https://drive.google.com/file/d/1pe87K0obOQBCMkMYp5ZuxBzwib_epSxY/view?usp=sharing" target="_blank" class="flex items-center justify-between text-sm font-bold text-slate-900 hover:text-blue-600 transition">
-                            <span>Voir le dossier Sage</span>
+                    <div class="mt-auto pt-4 border-t border-slate-50">
+                        <a href="https://drive.google.com/file/d/1pe87K0obOQBCMkMYp5ZuxBzwib_epSxY/view?usp=sharing" target="_blank" class="flex items-center justify-between text-xs font-bold text-slate-900 hover:text-blue-600 transition">
+                            <span>Voir dossier Sage</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJET 4 : LBO GreenBots -->
+            <article class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border-indigo-100">
+                <div class="h-32 bg-indigo-50 flex items-center justify-center border-b border-slate-100">
+                    <i class="fas fa-handshake text-4xl text-indigo-200"></i>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2 italic tracking-tight text-indigo-900">LBO GreenBots</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">
+                        Définition des hypothèses de réalisation du LBO : modélisation de la dette, TRI investisseurs et analyse de la capacité de remboursement.
+                    </p>
+                    <div class="mt-auto pt-4 border-t border-slate-50">
+                        <a href="https://docs.google.com/spreadsheets/d/1wxo2HxLLz3JRnlxLMg3127KrAa4TGPTt/edit?usp=sharing&ouid=104663664351029682293&rtpof=true&sd=true" target="_blank" class="flex items-center justify-between text-xs font-bold text-indigo-700 hover:text-indigo-800 transition">
+                            <span>Consulter Modélisation</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -206,89 +254,97 @@
         </div>
     </main>
 
-    <!-- SECTION CV -->
-    <section id="cv" class="bg-blue-600 py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center text-white">
-            <h2 class="text-3xl font-extrabold mb-4 italic">Prêt pour une nouvelle collaboration ?</h2>
-            <p class="mb-8 text-blue-100">Consultez mon parcours complet en téléchargeant mon curriculum vitæ au format PDF.</p>
-            <div class="flex justify-center">
-                <a href="https://drive.google.com/file/d/1ghKS_9bpU0uMEWzPBHMFjSaBrMVLEyNl/view?usp=sharing" target="_blank" class="bg-white text-blue-600 px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-100 transition shadow-2xl flex items-center gap-3">
-                    <i class="fas fa-file-pdf text-xl"></i> Télécharger mon CV (PDF)
-                </a>
+    <!-- BANNIÈRE DISPONIBILITÉ -->
+    <section class="bg-blue-50 py-8 border-y border-blue-100">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-center">
+            <div class="flex items-center gap-3">
+                <span class="relative flex h-3 w-3">
+                    <span class="badge-dispo animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
+                </span>
+                <p class="text-blue-900 font-bold italic text-lg text-center">Disponible pour un stage à partir de <span class="text-blue-600 underline decoration-2">Mars 2026</span> (4 à 5 mois)</p>
             </div>
-            <p class="mt-6 text-xs text-blue-200 uppercase font-bold tracking-tighter">Disponible dès Mars 2026 pour un stage de 4 à 6 mois</p>
         </div>
     </section>
 
     <!-- EXPERTISES -->
-    <section id="expertises" class="bg-slate-900 text-white py-24 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
+    <section id="expertises" class="bg-slate-900 text-white py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-2xl font-extrabold mb-10 text-blue-400 uppercase tracking-widest">Maîtrise Technique</h2>
-                <div class="space-y-6">
+                <h2 class="text-xl font-extrabold mb-8 text-blue-400 uppercase tracking-widest">Maîtrise Technique</h2>
+                <div class="space-y-4">
                     <div class="flex justify-between items-end border-b border-slate-800 pb-2">
-                        <span class="font-bold">Analyse de Trésorerie & Agios</span>
-                        <span class="text-xs text-blue-500 font-bold uppercase">Expert</span>
+                        <span class="text-sm font-bold">LBO & Ingénierie Financière</span>
+                        <span class="text-[9px] text-blue-500 font-bold uppercase">Avancé</span>
                     </div>
                     <div class="flex justify-between items-end border-b border-slate-800 pb-2">
-                        <span class="font-bold">Comptabilité & Audit (Sage 100)</span>
-                        <span class="text-xs text-blue-500 font-bold uppercase">Avancé</span>
+                        <span class="text-sm font-bold">Restructuration & Régularisation Comptable</span>
+                        <span class="text-[9px] text-blue-500 font-bold uppercase">Expertise</span>
                     </div>
                     <div class="flex justify-between items-end border-b border-slate-800 pb-2">
-                        <span class="font-bold">Excel Professionnel (VBA / Power Query)</span>
-                        <span class="text-xs text-blue-500 font-bold uppercase">Expert</span>
+                        <span class="text-sm font-bold">Audit & Sage 100 Cloud</span>
+                        <span class="text-[9px] text-blue-500 font-bold uppercase">Avancé</span>
                     </div>
                     <div class="flex justify-between items-end border-b border-slate-800 pb-2">
-                        <span class="font-bold">Reporting & Power BI</span>
-                        <span class="text-xs text-slate-500 font-bold uppercase">Intermédiaire</span>
+                        <span class="text-sm font-bold">Modélisation Excel (VBA / Power Query)</span>
+                        <span class="text-[9px] text-blue-500 font-bold uppercase">Expert</span>
                     </div>
                 </div>
             </div>
             <div>
-                <h2 class="text-2xl font-extrabold mb-10 text-blue-400 uppercase tracking-widest">Parcours Académique</h2>
-                <div class="space-y-8">
-                    <div class="relative pl-6 border-l-2 border-blue-600">
-                        <p class="text-sm font-bold">PGE - Master Audit & Finance</p>
-                        <p class="text-xs text-slate-400">ESDES Business School - Lyon, France</p>
+                <h2 class="text-xl font-extrabold mb-8 text-blue-400 uppercase tracking-widest">Formation</h2>
+                <div class="space-y-6">
+                    <div class="relative pl-5 border-l-2 border-blue-600">
+                        <p class="text-sm font-bold italic">Master Audit & Finance</p>
+                        <p class="text-[10px] text-slate-400">ESDES Business School - Lyon</p>
                     </div>
-                    <div class="relative pl-6 border-l-2 border-slate-700">
-                        <p class="text-sm font-bold">Master Comptabilité Finance des Entreprises</p>
-                        <p class="text-xs text-slate-400 italic">Major de promotion (15.13/20) - UCAC</p>
+                    <div class="relative pl-5 border-l-2 border-slate-700">
+                        <p class="text-sm font-bold italic">Master Comptabilité Finance</p>
+                        <p class="text-[10px] text-slate-400">Major de promotion - UCAC</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CV -->
+    <section id="cv" class="bg-blue-600 py-12 px-6">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-2xl font-extrabold mb-3 italic">Besoin d'un collaborateur rigoureux et efficace ?</h2>
+            <p class="mb-6 text-blue-100 text-sm italic">Consultez mon CV complet pour plus de détails sur mon parcours.</p>
+            <div class="flex justify-center">
+                <a href="https://drive.google.com/file/d/1ghKS_9bpU0uMEWzPBHMFjSaBrMVLEyNl/view?usp=sharing" target="_blank" class="bg-white text-blue-600 px-8 py-3 rounded-xl font-black uppercase text-xs tracking-widest hover:bg-slate-100 transition shadow-2xl flex items-center gap-3">
+                    <i class="fas fa-file-pdf"></i> Mon Curriculum Vitæ
+                </a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-white py-20 px-6 text-center border-t border-slate-100">
+    <footer class="bg-white py-16 px-6 text-center border-t border-slate-100">
         <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-black text-slate-900 mb-2">FOPA DJIAFEUA GEDEON</h3>
-            <p class="text-blue-600 font-bold mb-8 uppercase tracking-widest text-xs italic">Auditeur & Analyste Financier</p>
+            <h3 class="text-2xl font-black text-slate-900 mb-1">FOPA GEDEON</h3>
+            <p class="text-blue-600 font-bold mb-6 uppercase tracking-widest text-[10px] italic">Auditeur & Analyste Financier</p>
             
-            <div class="flex flex-col md:flex-row justify-center gap-10 items-center mb-12">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-map-marker-alt text-slate-300"></i>
-                    <span class="text-sm font-bold text-slate-600">Lyon, France</span>
+            <div class="flex flex-col md:flex-row justify-center gap-8 items-center mb-8">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone text-blue-500 text-xs"></i>
+                    <span class="text-xs font-bold text-slate-600">+33 7 49 69 01 89</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-phone text-blue-500"></i>
-                    <span class="text-sm font-bold text-slate-600 italic">+33 7 49 69 01 89</span>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-envelope text-slate-300 text-xs"></i>
+                    <span class="text-xs font-bold text-slate-600 italic">gedeonfopa6@gmail.com</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-envelope text-slate-300"></i>
-                    <span class="text-sm font-bold text-slate-600 italic">gedeonfopa6@gmail.com</span>
-                </div>
+                <a href="https://www.linkedin.com/in/gédéon-fopa-ab8682218" target="_blank" class="flex items-center gap-2 text-blue-600 hover:underline">
+                    <i class="fab fa-linkedin text-xs"></i>
+                    <span class="text-xs font-bold italic">Mon Profil LinkedIn</span>
+                </a>
             </div>
 
-            <div class="flex justify-center gap-6 mb-12">
-                <a href="https://www.linkedin.com/in/gédéon-" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-blue-600 transition border border-slate-100"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:gedeonfopa6@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-red-500 transition border border-slate-100"><i class="fas fa-envelope"></i></a>
-            </div>
-
-            <p class="text-[10px] text-slate-300 font-medium uppercase tracking-[0.5em]">"Il n'y'a pas d'efficacité sans discipline, il n'existe pas de discipline sans caractère."</p>
+            <p class="text-[9px] text-slate-300 font-medium uppercase tracking-[0.4em]">"Rigueur financière & Intégrité professionnelle"</p>
         </div>
     </footer>
 
 </body>
 </html>
+
